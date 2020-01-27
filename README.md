@@ -8,5 +8,6 @@ TE_Density/: Customized scripts used for calculation of transposable element (TE
 
 Multiple_Exon_Gene/: Customized scripts used for retrevial of multiple exon *F-box* genes and their gene structrues in the *S<sub>6a</sub>* genome of *Petunia inflata*. This script is used in the workflow in Supplemental Figure 8B. 
 
-Non_Coding_Retrieval/: Customized scripts used for retrevial of non-coding (upstream and downstream) flanking region sequences of *SLF* genes  that were used for phylogenetic and sequence comparative analysis in this study. 
+Non_Coding_Retrieval/: Customized scripts used for retrevial of non-coding (upstream and downstream) flanking region sequences of *SLF* genes  that were used for phylogenetic and sequence comparative analysis in this study. A READ_ME file is attached to explain the usage of this script. 
 
+Author: Justin S. Williams. Teh-hui Kao Lab, Penn State University, 2016
