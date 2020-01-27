@@ -1,0 +1,55 @@
+Purpose:
+non-coding sequence retrieval surrounding a gene or sequence of interest
+from large genomic scaffolds. 
+
+This script uses BLAST, so the  exact location of the gene is not required. 
+Because there may be multiple matching HSPs (high scoring segment pairs) 
+produced by BLAST for each gene of interest, this script outputs all HSPs of a 
+minimum percent similarity (provided by the user).
+
+Prerequisites:
+ncd_run.py requires ncdmodules.py in the same directory
+this script also requires Biopython and ncbi-blast+
+
+Usage:
+python ncd_run.py genes_of_interest_file.fasta \
+	Large_genomic_file.fasta min_perc_similarity
+
+NOTE: percent similarity is written without "%"
+percent similarity represents the similarity of the HSP produced by BLAST
+
+Example:
+python ncd_run.py protocadherinBs.fasta human_scaffolds.fasta 90
+
+Output:
+Three fasta files per genomic region of interest: *_upstream.fasta, 
+*_downstream.fasta, and *_fullseq.fasta
+*=These files are named after the genomic scaffold queried, so a brief name in
+the fastafile will be desired, i.e. >CHR1, >CHR2, >scaffold34234, etc.
+
+The sequences in fasta format are named after the corresponding matching gene, 
+the percent similarity to that gene, and the location of the gene (based on the
+scaffold queried)
+
+example:
+>protocadherinB-1|99%|1600000
+ATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATG
+
+Disclaimer: This script is a work-in-progress, and was written and tested under
+limited conditions; that is, it works under my conditions, but perhaps not
+for everyone, and is not guaranteed to work. This program is free software. It 
+comes without any warranty, to the extent permitted by applicable law.
+
+This script is provided by the author "as is" and "with all faults." The author
+makes no representations or warranties of any kind concerning the safety, 
+suitability, lack of viruses, inaccuracies, typographical errors, or other 
+harmful components of this script. There are inherent dangers in the use of any 
+software, and you are solely responsible for determining whether this script is
+compatible with your equipment and other software installed on your equipment. 
+You are also solely responsible for the protection of your equipment and backup
+of your data, and the author will not be liable for any damages you may suffer 
+in connection with using, modifying, or distributing this script. 
+
+Author: Justin S. Williams. Teh-hui Kao Lab, Penn State University 2016
+Citation: Williams, JS (2016). non-coding sequence retrieval.
+http://jswilliamsresume.com/
